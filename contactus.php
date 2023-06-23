@@ -57,7 +57,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2><strong>Contact Us</strong></h2>
+          <img src="images/vaish.jpg" alt="Contact Icon" width="150" height="150"><br/>
+        <span>Phone: 7899366090</span><br/>
+        <span>Email: vaishnavifo@example.com</span>
             <hr/>
            
             
