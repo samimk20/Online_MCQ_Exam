@@ -85,16 +85,30 @@ function validate_form()
         alert("Please Enter a Valid Phone Number");
 		return false;
     }
-    else if(email=='')
-    {
-        alert("Please Enter Email Address.");
-        return false;
-    }
-    else if(validateEmail(email))
-    {
-        alert("Please Enter Valid Email Address.");
-        return false;
-    }
+    if (email.trim() === "") {
+            alert("email cannot be empty.");
+            return false;
+        }
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[cC][oO][mM]$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email format.");
+            return false;
+        }
+        var repeatingCharsRegex = /^([A-Za-z0-9._%+-])\1+@/;
+        if (repeatingCharsRegex.test(email)) {
+            alert("Email should not have repeating characters or alphabets before and after the @ symbol.");
+            return false;
+        }
+        var emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid Gmail address.");
+            return false;
+        }
+        else if(validateEmail(email))
+        {
+            alert("Please Enter Valid Email Address.");
+            return false;   
+        }
     else if(course_id=='')
     {
         alert("Please Select Course.");
